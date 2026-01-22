@@ -34,32 +34,33 @@ function App() {
   );
 }
 
-// Stili
+// Atjauninātie stili App.jsx failā
+
 const appContainerStyle = {
   backgroundColor: '#111',
   color: 'white',
   minHeight: '100vh',
-  fontFamily: 'Inter, system-ui, sans-serif'
-};
-
-const mainTitleStyle = {
-  fontSize: '3rem',
-  background: 'linear-gradient(to right, #646cff, #42b883)',
-  WebkitBackgroundClip: 'text',
-  WebkitTextFillColor: 'transparent',
-  fontWeight: '900'
+  fontFamily: 'Inter, system-ui, sans-serif',
+  padding: '0 20px', // Pievieno sānmalu atstarpes visai lapai
+  boxSizing: 'border-box' // Nodrošina, ka padding nepalielina kopējo platumu
 };
 
 const layoutGridStyle = {
   display: 'grid',
-  gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))',
+  gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', // Samazināts minmax, lai labāk ietilptu mazākos ekrānos
   gap: '30px',
   maxWidth: '1200px',
-  margin: '0 auto',
-  padding: '0 20px 40px 20px'
+  margin: '0 auto', // Centrē režģi
+  padding: '20px 0 40px 0', // Atstarpes augšā un apakšā
+  width: '100%' 
 };
 
-const theoryColumnStyle = { display: 'flex', flexDirection: 'column' };
+const theoryColumnStyle = { 
+  display: 'flex', 
+  flexDirection: 'column',
+  gap: '15px' // Pievieno atstarpi starp pašām mazajām komponentēm
+};
+
 const tableColumnStyle = { background: '#000', borderRadius: '24px', padding: '10px' };
 
 export default App;
