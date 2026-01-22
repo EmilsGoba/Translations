@@ -1,14 +1,12 @@
 import React from 'react';
 
 const RubikaKubs = () => (
-  <section style={sectionStyle}>
-    <h3>Rubika kubs un iezīmes</h3>
-    <p>Rubika kubs kalpo kā metafora iezīmes apskatīšanai no dažādiem leņķiem[cite: 90].</p>
-    <ul>
-      <li>Pati iezīme nemainās (kā kubs), bet mainās perspektīva un apstākļi[cite: 91, 102].</li>
-      <li>Grozot "kubu", tiek atklāti jauni scenāriji un ierobežojumi, piemēram, tehniskās prasības[cite: 119, 120].</li>
-    </ul>
-  </section>
+  <div style={cardStyle}>
+    <h3 style={titleStyle}>🎲 Rubika kuba metafora</h3>
+    <p>Iezīme ir kā kubs — tā pati par sevi nemainās, bet mēs to "grozām", lai atrastu jaunus scenārijus, ierobežojumus un tehniskās nianses (NFR).</p>
+  </div>
 );
 
+const cardStyle = { background: '#222', padding: '20px', borderRadius: '12px', marginBottom: '15px', borderLeft: '5px solid #f7b955' };
+const titleStyle = { color: '#f7b955', marginTop: 0 };
 export default RubikaKubs;
