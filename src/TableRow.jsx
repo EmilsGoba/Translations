@@ -1,20 +1,31 @@
-import React from 'react';
-
-// Šūnas stils, lai nodrošinātu konsistenci
-const tableCellStyle = {
-  padding: '12px 15px',
-  textAlign: 'left',
-  borderBottom: '1px solid #333',
-  color: 'white'
-};
+import React, { useState } from 'react';
 
 const TableRow = ({ english, latvian }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  const rowStyle = {
+    backgroundColor: isHovered ? 'rgba(100, 108, 255, 0.1)' : 'transparent',
+    transform: isHovered ? 'scale(1.01)' : 'scale(1)',
+    transition: 'all 0.2s ease-in-out',
+    cursor: 'default',
+  };
+
+  const cellStyle = {
+    padding: '16px 20px',
+    borderBottom: '1px solid rgba(255, 255, 255, 0.05)',
+    fontSize: '15px',
+  };
+
   return (
-    <tr style={{ transition: 'background-color 0.2s' }}>
-      <td style={{ ...tableCellStyle, fontWeight: 'bold', color: '#646cff' }}>
+    <tr 
+      style={rowStyle}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <td style={{ ...cellStyle, color: '#646cff', fontWeight: '800', letterSpacing: '0.5px' }}>
         {english}
       </td>
-      <td style={tableCellStyle}>
+      <td style={{ ...cellStyle, color: '#e0e0e0', fontWeight: '400' }}>
         {latvian}
       </td>
     </tr>
